@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resq-Link Local</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+body { font-family:'Plus Jakarta Sans',sans-serif }
+.modal { position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; }
+.modal.show { display:flex }
+</style>
+</head>
+
+<body class="bg-slate-100">
+
+<div id="toast-container" class="fixed top-6 right-6 z-50"></div>
+
+<div id="content-area" class="p-6"></div>
+
+<!-- ================= TEMPLATE ================= -->
+
+<script type="text/html" id="tpl-reporter">
+<div class="max-w-xl mx-auto bg-white p-6 rounded-3xl shadow space-y-4">
+
+<h2 class="font-black text-xl">Laporan Kes</h2>
+
+<input id="f-responder-name" class="input" placeholder="Nama Responder">
+<input id="f-program" class="input" placeholder="Program">
+<input id="f-checkpoint" class="input" placeholder="Checkpoint (CP01)">
+<input id="f-datetime" type="datetime-local" class="input">
+
+<hr>
+
+<input id="f-patient-name" class="input" placeholder="Nama Pesakit">
+<input id="f-patient-age" class="input" placeholder="Umur">
+<select id="f-patient-gender" class="input">
+<option value="">Jantina</option><option>Lelaki</option><option>Perempuan</option>
+</select>
+
+<textarea id="f-main-complaint" class="input" placeholder="Aduan Utama"></textarea>
+
+<hr>
+
+<input id="f-bp" class="input" placeholder="BP">
+<input id="f-pr" class="input" placeholder="PR">
+<input id="f-spo2" class="input" placeholder="SpO2">
+<input id="f-rr" class="input" placeholder="RR">
+
+<hr>
+
+<input id="f-caregiver" class="input" placeholder="Nama Perawat">
+<textarea id="f-treatment" class="input" placeholder="Rawatan"></textarea>
+
+<select id="f-status" class="input">
+<option>Selesai di Lokasi</option>
+<option>Dirujuk Hospital</option>
+</select>
+
+<button onclick="saveCase()" class="w-full bg-blue-600 text-white p-4 rounded-xl font-black">
+Simpan Laporan
+</button>
+
+<button onclick="shareCaseWhatsApp()" class="w-full bg-emerald-600 text-white p-3 rounded-xl font-black">
+Share WhatsApp
+</button>
+
+</div>
+</script>
+
+<!-- DETAIL MODAL -->
+<div id="detail-modal" class="modal items-center justify-center">
+<div class="bg-white max-w-xl w-full p-6 rounded-3xl">
+<h3 id="detail-title" class="font-black mb-4"></h3>
+<div id="detail-body"></div>
+<button onclick="closeDetail()" class="mt-6 w-full bg-slate-800 text-white p-3 rounded-xl">Tutup</button>
+</div>
+</div>
+
+<!-- ================= JS ================= -->
+<script src="/resQ_amal/js/state.js"></script>
+<script src="/resQ_amal/js/utils.js"></script>
+<script src="/resQ_amal/js/reporter.js"></script>
+<script src="/resQ_amal/js/views.js"></script>
+<script src="/resQ_amal/js/app.js"></script>
+
+</body>
+</html>
