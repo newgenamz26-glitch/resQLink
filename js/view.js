@@ -23,4 +23,13 @@ window.closeDetail = () => {
 if (currentView === 'reporter') {
   setTimeout(initSignaturePad, 300);
 }
+
+viewCaseDetail() 
+${c.signature ? `
+  <div class="mt-6">
+    <p class="font-bold mb-2">Tandatangan Responder</p>
+    <img src="${c.signature}" class="border rounded-xl w-64">
+  </div>
+` : ''}
+
 -->
