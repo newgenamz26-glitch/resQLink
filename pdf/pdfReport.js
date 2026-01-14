@@ -45,4 +45,8 @@ window.generateCasePDF = (caseId) => {
 };
 <!--calling code 
   generateCasePDF(caseId);
+${c.signature ? `
+  <img src="${c.signature}" style="width:200px;margin-top:20px">
+` : ''}
+
 -->
