@@ -19,3 +19,8 @@ window.viewCaseDetail = id => {
 window.closeDetail = () => {
   document.getElementById('detail-modal').classList.remove('show');
 };
+<!--
+if (currentView === 'reporter') {
+  setTimeout(initSignaturePad, 300);
+}
+-->
